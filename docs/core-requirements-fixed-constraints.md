@@ -5,9 +5,11 @@ other document, choice and tool must fit. Everything not listed here is
 open to prior art: an established system or standard that does the job is
 preferred over our own design, and over earlier decisions.
 
-1. **Built and deployed with NixOS.** Everything known before runtime is
-   computed at evaluation and build: configuration, validation, layouts,
-   who reads what from whom. A deployed node is a static system.
+1. **Built and deployed with Nix.** Written in the Nix language, using
+   the Nix ecosystem; NixOS is not a prerequisite, since Nix runs on many
+   distributions and operating systems. Everything known before runtime
+   is computed at evaluation and build: configuration, validation,
+   layouts, who reads what from whom. A deployed node is a static system.
 2. **Pluggable modules.** A module is an independent unit that shapes data
    for presentation. Common needs (fetching, scheduling, publishing,
    validation) have standard default paths, so most modules are thin;
