@@ -12,9 +12,11 @@ preferred over our own design, and over earlier decisions.
    for presentation. Common needs (fetching, scheduling, publishing,
    validation) have standard default paths, so most modules are thin;
    a module brings its own machinery only where the defaults do not fit.
-3. **Little to no resource cost.** For small always-on machines. Prefer
-   nothing resident; where something must run, prefer the smallest
-   established tool that does the job.
+3. **Little to no resource cost.** For small always-on machines: near-zero
+   idle cost. Prefer nothing resident; where something must run, prefer the
+   smallest established tool that does the job. Work is scheduled or
+   event-triggered and produces flat snapshots, not a resident runtime per
+   module.
 4. **Existing systems over our own implementation.** Our own code is
    limited to Nix glue and module data shaping. Anything else we would
    write needs a stated reason why no existing system fits.
@@ -27,7 +29,8 @@ preferred over our own design, and over earlier decisions.
 7. **Interaction, minimum set.** Buttons that run predefined tasks. Part
    of the generic interface, not a separate system.
 8. **Local first.** No dependency on cloud services; data goes only to
-   configured peers.
+   configured peers. Small state transfers between nodes are preferred over
+   duplicated polling.
 
 ## Suggestions, not requirements
 
